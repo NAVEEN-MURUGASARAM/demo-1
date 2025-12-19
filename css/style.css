@@ -943,3 +943,109 @@ textarea.input-control {
   display: block;
 }
 
+/* Services Carousel */
+.services-carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.services-track {
+  display: flex;
+  gap: 30px;
+  animation: scroll 50s linear infinite;
+  width: max-content;
+}
+
+.services-carousel-wrapper:hover .services-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Service Card */
+.service-card {
+  flex: 0 0 280px;
+  min-width: 280px;
+  background-color: var(--bg-color);
+  box-shadow: var(--shadow);
+  padding: 30px 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-emoji {
+  font-size: 50px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--text-x-dark-gray);
+  margin-bottom: 12px;
+  text-transform: capitalize;
+  font-family: 'Playfair Display', serif;
+}
+
+.service-description {
+  font-size: var(--fs-sm);
+  color: var(--text-dark-gray);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.service-features li {
+  font-size: var(--fs-sm);
+  color: var(--text-dark-gray);
+  padding: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.service-features li:last-child {
+  border-bottom: none;
+}
+
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Responsive for Services Carousel */
+@media(max-width: 767px) {
+  .service-card {
+    min-width: calc(100vw - 60px);
+    flex: 0 0 calc(100vw - 60px);
+  }
+
+  .services-track {
+    gap: 20px;
+  }
+}
