@@ -3,38 +3,40 @@
 
 /* Variables */
 :root {
-  --hue: 200;
-  --saturation: 70%;
-  --lightness: 55%;
+  /* Primary Theme Color */
+  --hue: 345;                 /* Burgundy */
+  --saturation: 55%;
+  --lightness: 38%;
   --main-color: hsl(var(--hue), var(--saturation), var(--lightness));
 
   /* Text colors */
-  --text-white: hsl(0, 0%, 100%);
-  --text-light-gray: hsl(0, 0%, 96%);
-  --text-x-dark-gray: hsl(0, 0%, 10%);
-  --text-dark-gray: hsl(0, 0%, 20%);
+  --text-white: #ffffff;
+  --text-light-gray: #f4f4f4;
+  --text-x-dark-gray: #1e1e1e;
+  --text-dark-gray: #444444;
 
-  /* Bg colors */
-  --body-bg-color: hsl(var(--hue), 60%, 94%);
-  --bg-color: hsl(var(--hue), 60%, 96%);
-  --bg-white: hsl(0, 0%, 100%);
+  /* Background colors */
+  --body-bg-color: #faf7f5;
+  --bg-color: #ffffff;
+  --bg-white: #ffffff;
 
-  /* Border color */
-  --border-color: hsl(var(--hue), 48%, 80%);
+  /* Border */
+  --border-color: #e2d6d1;
 
-  /* Shadow */
-  --shadow: 0 0 10px hsla(var(--hue), 57%, 63%, 0.3);
-  --focus-shadow: 0 0 10px hsla(var(--hue), 57%, 63%, 0.6);
+  /* Shadows (soft & premium) */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --focus-shadow: 0 0 0 3px rgba(139, 38, 53, 0.25);
 
-  /* Font size */
-  --fs-4xl: 50px;
-  --fs-3xl: 35px;
+  /* Font sizes */
+  --fs-4xl: 52px;
+  --fs-3xl: 36px;
   --fs-2xl: 26px;
   --fs-xl: 20px;
   --fs-lg: 18px;
   --fs-md: 16px;
   --fs-sm: 14px;
 }
+
 
 /* Override variables for dark theme */
 body.t-dark {
@@ -70,15 +72,14 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   font-size: var(--fs-md);
-  line-height: 1.5;
+  line-height: 1.7;
   color: var(--text-dark-gray);
   background-color: var(--body-bg-color);
-  -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: transparent;
 }
+
 
 a {
   color: var(--main-color);
@@ -89,15 +90,11 @@ ul {
   list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--text-x-dark-gray);
-  line-height: 1.3;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
 }
+
 
 p {
   margin-bottom: 15px;
@@ -327,14 +324,13 @@ textarea.input-control {
 }
 
 .header .logo a {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 26px;
+  font-weight: 700;
   text-transform: uppercase;
-  line-height: 1;
-  display: block;
-  transform: scaleY(0.9);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-family: 'Playfair Display', serif;
 }
+
 
 .header .logo span {
   font-size: 12px;
@@ -350,14 +346,10 @@ textarea.input-control {
 }
 
 .nav a {
-  text-transform: capitalize;
-  font-size: var(--fs-md);
-  color: var(--text-x-dark-gray);
-  font-weight: 400;
-  display: block;
-  padding: 10px 0;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
+
 
 .nav a:hover {
   color: var(--main-color);
@@ -371,6 +363,8 @@ textarea.input-control {
 /* Home */
 .home {
   padding: 100px 0 60px;
+  padding-top: 180px; /* increase this value as needed */
+
 }
 
 .home-text,
@@ -409,10 +403,13 @@ textarea.input-control {
 }
 
 .home-img img {
-  max-width: 270px;
+  max-width: 500px; /* increase as needed */
+  width: 100%;       /* make it responsive */
+  height: auto;
   display: block;
   margin: auto;
 }
+
 
 /* About */
 .about .section-title {
@@ -920,3 +917,29 @@ textarea.input-control {
     grid-column: span 12;
   }
 }
+
+/* Make logo and text align horizontally */
+.logo-link {
+  display: flex;
+  align-items: center; /* vertically center the text with the logo */
+  gap: 15px; /* space between logo and text */
+  text-decoration: none; /* remove underline from link */
+}
+
+.logo-img {
+  width: 60px; /* adjust size as needed */
+  height: auto;
+}
+
+.logo-text .brand-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #49310e;  /* your brand color */
+}
+
+.logo-text .tagline {
+  font-size: 14px;
+  color: #555;
+  display: block;
+}
+
