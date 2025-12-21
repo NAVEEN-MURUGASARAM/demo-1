@@ -788,6 +788,9 @@ textarea.input-control {
     z-index: 1;
     background-color: transparent;
   }
+  .service-page {
+    padding-top: 120px; /* push content below header */
+  }
 
 
   .nav-toggler span {
@@ -962,9 +965,8 @@ textarea.input-control {
 }
 
 .logo-text .brand-name {
-  font-size: 24px;
-  font-weight: bold;
-  color: #49310e;  /* your brand color */
+  font-size: 14px;     /* 🔥 KEY FIX */
+  line-height: 1.2;
 }
 
 .logo-text .tagline {
@@ -981,6 +983,15 @@ textarea.input-control {
   padding: 20px 0;
   scroll-behavior: smooth;
 }
+.service-hero {
+  background: linear-gradient(
+    rgba(255, 248, 240, 0.9),
+    rgba(255, 248, 240, 0.9)
+  ),
+  url("img/pattern.png");
+  background-size: cover;
+}
+
 
 .services-carousel-wrapper::-webkit-scrollbar {
   display: none;
@@ -1188,4 +1199,36 @@ textarea.input-control {
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+}
+.cta-section {
+  background: linear-gradient(135deg, #fff5ec, #fbe8d9);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #6b3e26;
+}
+
+.cta p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.cta .btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .cta p {
+    font-size: 14px;
+  }
 }
