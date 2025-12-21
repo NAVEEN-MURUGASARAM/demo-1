@@ -343,11 +343,31 @@ textarea.input-control {
 .nav li {
   display: inline-block;
   margin-left: 35px;
+  padding: 15px 0;
 }
 
 .nav a {
   font-weight: 500;
   letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--main-color);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 
@@ -403,7 +423,7 @@ textarea.input-control {
 }
 
 .home-img img {
-  max-width: 500px; /* increase as needed */
+  max-width: 100%; /* increase as needed */
   width: 100%;       /* make it responsive */
   height: auto;
   display: block;
@@ -769,6 +789,7 @@ textarea.input-control {
     background-color: transparent;
   }
 
+
   .nav-toggler span {
     display: block;
     height: 2px;
@@ -835,8 +856,11 @@ textarea.input-control {
   }
 
   .nav a {
-    font-size: var(--fs-lg);
-  }
+  font-size: 20px;   /* or 22px if you want bolder */
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
 
   .nav li+li {
     border-top: 1px solid var(--border-color);
@@ -861,6 +885,12 @@ textarea.input-control {
 
   .about-text {
     order: -1;
+    text-align: center; /* Add this line */
+  }
+
+  /* Center the section title on mobile */
+  .about .section-title {
+    text-align: center; /* Add this line */
   }
 
   .about-img .box {
@@ -899,7 +929,7 @@ textarea.input-control {
 
   /* Home */
   .home-img img {
-    max-width: 200px;
+    max-width: 100%;
   }
 
   .home-img .circle {
@@ -945,9 +975,19 @@ textarea.input-control {
 
 /* Services Carousel */
 .services-carousel-wrapper {
-  overflow: hidden;
+  overflow-x: auto;          /* allow horizontal scrolling */
+  overflow-y: hidden;
   position: relative;
   padding: 20px 0;
+  scroll-behavior: smooth;
+}
+
+.services-carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.services-carousel-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .services-track {
@@ -1048,4 +1088,104 @@ textarea.input-control {
   .services-track {
     gap: 20px;
   }
+}
+.service-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+#servicePoints {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+#servicePoints li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+#serviceDesc {
+  max-width: 600px;
+  margin: 10px auto 20px;
+  color: #555;
+}
+.service-page {
+  padding: 80px 0;
+}
+
+.service-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.service-gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.service-gallery img:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+
+.service-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#servicePoints {
+  max-width: 600px;
+  margin: 30px auto 50px;
+  padding: 0;
+  list-style: none;
+}
+
+#servicePoints li {
+  font-size: 16px;
+  color: #4a2c2a;
+  padding: 12px 0;
+  position: relative;
+  padding-left: 28px;
+}
+
+#servicePoints li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #b08d57;
+  font-size: 18px;
+}
+
+/* ===== SERVICE PAGE ===== */
+.service-page {
+  background: #fffaf6;
+}
+
+.service-page .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-page .section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4a2c2a;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.service-page .section-title p {
+  font-size: 16px;
+  color: #6f5b5b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
